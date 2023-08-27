@@ -2,6 +2,7 @@ package com.example.hello.core_re.Order;
 
 import com.example.hello.core_re.discount.DiscountPolicy;
 import com.example.hello.core_re.discount.FixDiscountPolicy;
+import com.example.hello.core_re.discount.RateDiscountPolicy;
 import com.example.hello.core_re.member.Member;
 import com.example.hello.core_re.member.MemberRepository;
 import com.example.hello.core_re.member.MemoryMemberRepository;
@@ -9,7 +10,7 @@ import com.example.hello.core_re.member.MemoryMemberRepository;
 public class OrderServiceImpl implements OrderService {
 
     private final MemberRepository memberRepository = new MemoryMemberRepository();
-    private final DiscountPolicy discountPolicy = new FixDiscountPolicy();
+    private final DiscountPolicy discountPolicy = new RateDiscountPolicy();
 
     @Override
     public Order createOrder(Long memberId, String itemName, int itemPrice) {
