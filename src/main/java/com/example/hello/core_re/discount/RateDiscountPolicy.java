@@ -5,8 +5,6 @@ import com.example.hello.core_re.member.Member;
 
 public class RateDiscountPolicy implements DiscountPolicy{
 
-
-
     private int disconutPercent = 10;
 
     @Override
