@@ -14,10 +14,10 @@ import com.example.hello.core_re.member.MemoryMemberRepository;
 public class AppConfig {
 
     public MemberService memberService(){
-        return new MemberServiceImpl(meeberRepository());
+        return new MemberServiceImpl(memberRepository());
     }
 
-     private MemoryMemberRepository meeberRepository() {
+     private MemoryMemberRepository memberRepository() {
         return new MemoryMemberRepository();
     }
 
