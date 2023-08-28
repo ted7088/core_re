@@ -9,6 +9,7 @@ import com.example.hello.core_re.member.MemoryMemberRepository;
 
 //appconfig는 실제 동작에 필요한 구현 객체를 생성한다.
 //생성자를 통해서 주입
+//test
 public class AppConfig {
 
     public MemberService memberService(){
