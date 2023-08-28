@@ -4,6 +4,7 @@ import com.example.hello.core_re.Order.OrderService;
 import com.example.hello.core_re.Order.OrderServiceImpl;
 import com.example.hello.core_re.discount.DiscountPolicy;
 import com.example.hello.core_re.discount.FixDiscountPolicy;
+import com.example.hello.core_re.discount.RateDiscountPolicy;
 import com.example.hello.core_re.member.MemberService;
 import com.example.hello.core_re.member.MemberServiceImpl;
 import com.example.hello.core_re.member.MemoryMemberRepository;
@@ -22,11 +23,12 @@ public class AppConfig {
     }
 
     public OrderService orderService(){
-        return new OrderServiceImpl(new MemoryMemberRepository(), discountPolicy());
+        return new OrderServiceImpl(memberRepository(), discountPolicy());
     }
 
     public DiscountPolicy discountPolicy(){
-        return new FixDiscountPolicy();
+//        return new FixDiscountPolicy();
+        return new RateDiscountPolicy();
     }
 
 }
