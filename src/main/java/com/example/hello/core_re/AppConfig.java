@@ -2,6 +2,7 @@ package com.example.hello.core_re;
 
 import com.example.hello.core_re.Order.OrderService;
 import com.example.hello.core_re.Order.OrderServiceImpl;
+import com.example.hello.core_re.discount.DiscountPolicy;
 import com.example.hello.core_re.discount.FixDiscountPolicy;
 import com.example.hello.core_re.member.MemberService;
 import com.example.hello.core_re.member.MemberServiceImpl;
@@ -13,11 +14,19 @@ import com.example.hello.core_re.member.MemoryMemberRepository;
 public class AppConfig {
 
     public MemberService memberService(){
-        return new MemberServiceImpl(new MemoryMemberRepository());
+        return new MemberServiceImpl(meeberRepository());
+    }
+
+     private MemoryMemberRepository meeberRepository() {
+        return new MemoryMemberRepository();
     }
 
     public OrderService orderService(){
-        return new OrderServiceImpl(new MemoryMemberRepository(), new FixDiscountPolicy());
+        return new OrderServiceImpl(new MemoryMemberRepository(), discountPolicy());
+    }
+
+    public DiscountPolicy discountPolicy(){
+        return new FixDiscountPolicy();
     }
 
 }
