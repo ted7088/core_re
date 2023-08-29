@@ -12,15 +12,13 @@ public class MemberServiceTest {
     MemberService memberService;
 
     @BeforeEach
-    public void beforeEach(){
+    public void beforeEach() {
         AppConfig appConfig = new AppConfig();
         memberService = appConfig.memberService();
     }
 
-
-
     @Test
-    void join(){
+    void join() {
         //given
         Member member = new Member(1L, "memberA", Grade.VIP);
 
