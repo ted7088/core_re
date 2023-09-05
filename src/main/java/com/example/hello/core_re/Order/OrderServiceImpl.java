@@ -9,7 +9,6 @@ import org.springframework.stereotype.Component;
 @Component
 public class OrderServiceImpl implements OrderService {
 
-
     private final MemberRepository memberRepository;
     private final DiscountPolicy discountPolicy;
 
